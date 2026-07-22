@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: intelliagent
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: DEFAULT_LLM_PROVIDER
+        value: groq
+      - key: DEFAULT_EMBEDDING_PROVIDER
+        value: openai
+      - key: GROQ_API_KEY
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: ANTHROPIC_API_KEY
+        sync: false
